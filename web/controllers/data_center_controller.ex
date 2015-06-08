@@ -7,13 +7,16 @@ defmodule Rackit.DataCenterController do
   plug :action
 
   def index(conn, _params) do
-    data_centers = Repo.all(DataCenter)
+    data_centers = Repo.all(DataCenter) |> Enum.map(fn(dc) ->
+      dc |> Repo.preload(:company)
+    end)
     render(conn, "index.html", data_centers: data_centers)
   end
 
   def new(conn, _params) do
     changeset = DataCenter.changeset(%DataCenter{})
-    render(conn, "new.html", changeset: changeset)
+    companies = Repo.all(Rackit.Company)
+    render(conn, "new.html", changeset: changeset, companies: companies)
   end
 
   def create(conn, %{"data_center" => data_center_params}) do
@@ -26,23 +29,25 @@ defmodule Rackit.DataCenterController do
       |> put_flash(:info, "DataCenter created successfully.")
       |> redirect(to: data_center_path(conn, :index))
     else
-      render(conn, "new.html", changeset: changeset)
+      companies = Repo.all(Rackit.Company)
+      render(conn, "new.html", changeset: changeset, companies: companies)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    data_center = Repo.get(DataCenter, id)
+    data_center = Repo.get(DataCenter, id) |> Repo.preload(:company)
     render(conn, "show.html", data_center: data_center)
   end
 
   def edit(conn, %{"id" => id}) do
-    data_center = Repo.get(DataCenter, id)
+    data_center = Repo.get(DataCenter, id) |> Repo.preload(:company)
     changeset = DataCenter.changeset(data_center)
-    render(conn, "edit.html", data_center: data_center, changeset: changeset)
+    companies = Repo.all(Rackit.Company)
+    render(conn, "edit.html", data_center: data_center, changeset: changeset, companies: companies)
   end
 
   def update(conn, %{"id" => id, "data_center" => data_center_params}) do
-    data_center = Repo.get(DataCenter, id)
+    data_center = Repo.get(DataCenter, id) |> Repo.preload(:company)
     changeset = DataCenter.changeset(data_center, data_center_params)
 
     if changeset.valid? do
@@ -52,7 +57,8 @@ defmodule Rackit.DataCenterController do
       |> put_flash(:info, "DataCenter updated successfully.")
       |> redirect(to: data_center_path(conn, :index))
     else
-      render(conn, "edit.html", data_center: data_center, changeset: changeset)
+      companies = Repo.all(Rackit.Company)
+      render(conn, "edit.html", data_center: data_center, changeset: changeset, companies: companies)
     end
   end
 

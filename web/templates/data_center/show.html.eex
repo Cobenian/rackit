@@ -9,7 +9,7 @@
 
   <li>
     <strong>Company:</strong>
-    <%= @data_center.company %>
+    <%= @data_center.company.name %>
   </li>
 
 </ul>

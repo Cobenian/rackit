@@ -8,7 +8,7 @@ defmodule Rackit.DataCenter do
     timestamps
   end
 
-  @required_fields ~w(name)
+  @required_fields ~w(name company_id)
   @optional_fields ~w()
 
   @doc """

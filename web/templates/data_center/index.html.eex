@@ -13,7 +13,7 @@
 <%= for data_center <- @data_centers do %>
     <tr>
       <td><%= data_center.name %></td>
-      <td><%= data_center.company %></td>
+      <td><%= data_center.company.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: data_center_path(@conn, :show, data_center), class: "btn btn-default btn-xs" %>
