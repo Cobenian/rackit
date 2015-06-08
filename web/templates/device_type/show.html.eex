@@ -1,0 +1,27 @@
+<h2>Show device_type</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @device_type.name %>
+  </li>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @device_type.code %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @device_type.description %>
+  </li>
+
+  <li>
+    <strong>Disabled:</strong>
+    <%= @device_type.disabled %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: device_type_path(@conn, :index) %>
