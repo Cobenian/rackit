@@ -1,0 +1,52 @@
+<h2>Show building</h2>
+
+<ul>
+
+  <li>
+    <strong>Street1:</strong>
+    <%= @building.street1 %>
+  </li>
+
+  <li>
+    <strong>Street2:</strong>
+    <%= @building.street2 %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @building.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @building.state %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @building.country %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @building.zip %>
+  </li>
+
+  <li>
+    <strong>DataCenter:</strong>
+    <%= @building.data_center %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @building.name %>
+  </li>
+
+  <li>
+    <strong>Note:</strong>
+    <%= @building.note %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: building_path(@conn, :index) %>

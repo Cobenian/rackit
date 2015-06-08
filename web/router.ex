@@ -17,6 +17,10 @@ defmodule Rackit.Router do
 
     get "/", PageController, :index
     resources "/device_types", DeviceTypeController
+    resources "/companies", CompanyController
+    resources "/pocs", PocController
+    resources "/data_centers", DataCenterController
+    resources "/buildings", BuildingController
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,6 @@
+<h2>Edit poc</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: poc_path(@conn, :update, @poc) %>
+
+<%= link "Back", to: poc_path(@conn, :index) %>

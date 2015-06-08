@@ -1,0 +1,36 @@
+<h2>Listing pocs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Pager</th>
+      <th>Company</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for poc <- @pocs do %>
+    <tr>
+      <td><%= poc.first %></td>
+      <td><%= poc.last %></td>
+      <td><%= poc.phone %></td>
+      <td><%= poc.email %></td>
+      <td><%= poc.pager %></td>
+      <td><%= poc.company %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: poc_path(@conn, :show, poc), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: poc_path(@conn, :edit, poc), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: poc_path(@conn, :delete, poc), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New poc", to: poc_path(@conn, :new) %>

@@ -1,0 +1,17 @@
+<h2>Show data_center</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @data_center.name %>
+  </li>
+
+  <li>
+    <strong>Company:</strong>
+    <%= @data_center.company %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: data_center_path(@conn, :index) %>

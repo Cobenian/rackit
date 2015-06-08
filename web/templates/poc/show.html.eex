@@ -1,0 +1,37 @@
+<h2>Show poc</h2>
+
+<ul>
+
+  <li>
+    <strong>First:</strong>
+    <%= @poc.first %>
+  </li>
+
+  <li>
+    <strong>Last:</strong>
+    <%= @poc.last %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @poc.phone %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @poc.email %>
+  </li>
+
+  <li>
+    <strong>Pager:</strong>
+    <%= @poc.pager %>
+  </li>
+
+  <li>
+    <strong>Company:</strong>
+    <%= @poc.company %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: poc_path(@conn, :index) %>

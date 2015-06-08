@@ -1,0 +1,28 @@
+<h2>Listing data_centers</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for data_center <- @data_centers do %>
+    <tr>
+      <td><%= data_center.name %></td>
+      <td><%= data_center.company %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: data_center_path(@conn, :show, data_center), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: data_center_path(@conn, :edit, data_center), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: data_center_path(@conn, :delete, data_center), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New data_center", to: data_center_path(@conn, :new) %>
