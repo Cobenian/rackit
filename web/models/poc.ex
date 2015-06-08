@@ -12,8 +12,8 @@ defmodule Rackit.Poc do
     timestamps
   end
 
-  @required_fields ~w(first last phone email pager)
-  @optional_fields ~w()
+  @required_fields ~w(first last phone email company_id)
+  @optional_fields ~w(pager)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

@@ -37,7 +37,11 @@
 
   <div class="form-group">
     <label>Company</label>
-    <%= number_input f, :company_id, class: "form-control" %>
+    <select id="poc_company_id" name="poc[company_id]" class="form-control">
+      <%= for company <- @companies do %>
+      <option value="<%= company.id %>" <%= if f.model.company_id == company.id do %>selected="true"<% end %>><%= company.name %></option>
+      <% end %>
+    </select>
   </div>
 
   <div class="form-group">

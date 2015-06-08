@@ -21,7 +21,7 @@
       <td><%= poc.phone %></td>
       <td><%= poc.email %></td>
       <td><%= poc.pager %></td>
-      <td><%= poc.company %></td>
+      <td><%= poc.company.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: poc_path(@conn, :show, poc), class: "btn btn-default btn-xs" %>

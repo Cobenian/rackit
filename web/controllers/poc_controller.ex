@@ -7,13 +7,14 @@ defmodule Rackit.PocController do
   plug :action
 
   def index(conn, _params) do
-    pocs = Repo.all(Poc)
+    pocs = Repo.all(Poc) |> Repo.preload(:company)
     render(conn, "index.html", pocs: pocs)
   end
 
   def new(conn, _params) do
     changeset = Poc.changeset(%Poc{})
-    render(conn, "new.html", changeset: changeset)
+    companies = Repo.all(Rackit.Company)
+    render(conn, "new.html", changeset: changeset, companies: companies)
   end
 
   def create(conn, %{"poc" => poc_params}) do
@@ -31,14 +32,15 @@ defmodule Rackit.PocController do
   end
 
   def show(conn, %{"id" => id}) do
-    poc = Repo.get(Poc, id)
+    poc = Repo.get(Poc, id) |> Repo.preload(:company)
     render(conn, "show.html", poc: poc)
   end
 
   def edit(conn, %{"id" => id}) do
     poc = Repo.get(Poc, id)
     changeset = Poc.changeset(poc)
-    render(conn, "edit.html", poc: poc, changeset: changeset)
+    companies = Repo.all(Rackit.Company)
+    render(conn, "edit.html", poc: poc, changeset: changeset, companies: companies)
   end
 
   def update(conn, %{"id" => id, "poc" => poc_params}) do
@@ -52,7 +54,8 @@ defmodule Rackit.PocController do
       |> put_flash(:info, "Poc updated successfully.")
       |> redirect(to: poc_path(conn, :index))
     else
-      render(conn, "edit.html", poc: poc, changeset: changeset)
+      companies = Repo.all(Rackit.Company)
+      render(conn, "edit.html", poc: poc, changeset: changeset, companies: companies)
     end
   end
 

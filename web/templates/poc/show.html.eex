@@ -29,7 +29,7 @@
 
   <li>
     <strong>Company:</strong>
-    <%= @poc.company %>
+    <%= @poc.company.name %>
   </li>
 
 </ul>
