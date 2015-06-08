@@ -7,13 +7,14 @@ defmodule Rackit.BuildingController do
   plug :action
 
   def index(conn, _params) do
-    buildings = Repo.all(Building)
+    buildings = Repo.all(Building) |> Repo.preload(:data_center)
     render(conn, "index.html", buildings: buildings)
   end
 
   def new(conn, _params) do
     changeset = Building.changeset(%Building{})
-    render(conn, "new.html", changeset: changeset)
+    data_centers = Repo.all(Rackit.DataCenter)
+    render(conn, "new.html", changeset: changeset, data_centers: data_centers)
   end
 
   def create(conn, %{"building" => building_params}) do
@@ -26,23 +27,25 @@ defmodule Rackit.BuildingController do
       |> put_flash(:info, "Building created successfully.")
       |> redirect(to: building_path(conn, :index))
     else
-      render(conn, "new.html", changeset: changeset)
+      data_centers = Repo.all(Rackit.DataCenter)
+      render(conn, "new.html", changeset: changeset, data_centers: data_centers)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    building = Repo.get(Building, id)
+    building = Repo.get(Building, id) |> Repo.preload(:data_center)
     render(conn, "show.html", building: building)
   end
 
   def edit(conn, %{"id" => id}) do
-    building = Repo.get(Building, id)
+    building = Repo.get(Building, id) |> Repo.preload(:data_center)
     changeset = Building.changeset(building)
-    render(conn, "edit.html", building: building, changeset: changeset)
+    data_centers = Repo.all(Rackit.DataCenter)
+    render(conn, "edit.html", building: building, changeset: changeset, data_centers: data_centers)
   end
 
   def update(conn, %{"id" => id, "building" => building_params}) do
-    building = Repo.get(Building, id)
+    building = Repo.get(Building, id) |> Repo.preload(:data_center)
     changeset = Building.changeset(building, building_params)
 
     if changeset.valid? do
@@ -52,7 +55,8 @@ defmodule Rackit.BuildingController do
       |> put_flash(:info, "Building updated successfully.")
       |> redirect(to: building_path(conn, :index))
     else
-      render(conn, "edit.html", building: building, changeset: changeset)
+      data_centers = Repo.all(Rackit.DataCenter)
+      render(conn, "edit.html", building: building, changeset: changeset, data_centers: data_centers)
     end
   end
 

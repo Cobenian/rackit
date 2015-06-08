@@ -3,14 +3,14 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Name</th>
+      <th>DataCenter</th>
       <th>Street1</th>
       <th>Street2</th>
       <th>City</th>
       <th>State</th>
-      <th>Country</th>
       <th>Zip</th>
-      <th>DataCenter</th>
-      <th>Name</th>
+      <th>Country</th>
       <th>Note</th>
 
       <th></th>
@@ -19,14 +19,14 @@
   <tbody>
 <%= for building <- @buildings do %>
     <tr>
+      <td><%= building.name %></td>
+      <td><%= building.data_center.name %></td>
       <td><%= building.street1 %></td>
       <td><%= building.street2 %></td>
       <td><%= building.city %></td>
       <td><%= building.state %></td>
-      <td><%= building.country %></td>
       <td><%= building.zip %></td>
-      <td><%= building.data_center %></td>
-      <td><%= building.name %></td>
+      <td><%= building.country %></td>
       <td><%= building.note %></td>
 
       <td class="text-right">

@@ -3,6 +3,16 @@
 <ul>
 
   <li>
+    <strong>Name:</strong>
+    <%= @building.name %>
+  </li>
+
+  <li>
+    <strong>DataCenter:</strong>
+    <%= @building.data_center.name %>
+  </li>
+
+  <li>
     <strong>Street1:</strong>
     <%= @building.street1 %>
   </li>
@@ -23,23 +33,13 @@
   </li>
 
   <li>
-    <strong>Country:</strong>
-    <%= @building.country %>
-  </li>
-
-  <li>
     <strong>Zip:</strong>
     <%= @building.zip %>
   </li>
 
   <li>
-    <strong>DataCenter:</strong>
-    <%= @building.data_center %>
-  </li>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @building.name %>
+    <strong>Country:</strong>
+    <%= @building.country %>
   </li>
 
   <li>
