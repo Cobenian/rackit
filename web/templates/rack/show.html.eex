@@ -1,0 +1,22 @@
+<h2>Show rack</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @rack.name %>
+  </li>
+
+  <li>
+    <strong>Cage:</strong>
+    <%= @rack.cage.name %>
+  </li>
+
+  <li>
+    <strong>SlotCount:</strong>
+    <%= @rack.slot_count %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: rack_path(@conn, :index) %>

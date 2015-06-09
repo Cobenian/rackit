@@ -1,0 +1,7 @@
+<h2>New rack</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: rack_path(@conn, :create),
+                        cages: @cages %>
+
+<%= link "Back", to: rack_path(@conn, :index) %>

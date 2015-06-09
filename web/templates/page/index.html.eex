@@ -14,6 +14,21 @@
         <a href="/buildings">Buildings</a>
       </li>
       <li>
+        <a href="/floors">Floors</a>
+      </li>
+      <li>
+        <a href="/rooms">Rooms</a>
+      </li>
+      <li>
+        <a href="/cages">Cages</a>
+      </li>
+      <li>
+        <a href="/racks">Racks</a>
+      </li>
+      <li>
+        <a href="/slots">Slots</a>
+      </li>              
+      <li>
         <a href="/companies">Companies</a>
       </li>
       <li>
@@ -43,4 +58,3 @@
     </ul>
   </div>
 </div>
-

@@ -1,0 +1,17 @@
+<h2>Show slot</h2>
+
+<ul>
+
+  <li>
+    <strong>Position:</strong>
+    <%= @slot.position %>
+  </li>
+
+  <li>
+    <strong>Rack:</strong>
+    <%= @slot.rack.name %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: slot_path(@conn, :index) %>
