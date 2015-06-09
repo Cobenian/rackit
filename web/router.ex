@@ -27,6 +27,8 @@ defmodule Rackit.Router do
     resources "/racks", RackController
     resources "/slots", SlotController
     resources "/devices", DeviceController
+    resources "/circuits", CircuitController
+    resources "/transits", TransitController
   end
 
   # Other scopes may use custom stacks.

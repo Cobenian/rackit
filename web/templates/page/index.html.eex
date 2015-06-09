@@ -40,6 +40,12 @@
       <li>
         <a href="/pocs">Point of Contacts</a>
       </li>
+      <li>
+        <a href="/circuits">Circuits</a>
+      </li>
+      <li>
+        <a href="/transits">Transits</a>
+      </li>
     </ul>
   </div>
 
