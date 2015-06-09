@@ -1,0 +1,8 @@
+<h2>Edit power_cord</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: power_cord_path(@conn, :update, @power_cord),
+                        sockets: @sockets,
+                        power_supplies: @power_supplies %>
+
+<%= link "Back", to: power_cord_path(@conn, :index) %>

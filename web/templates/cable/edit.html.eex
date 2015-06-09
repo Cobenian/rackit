@@ -1,0 +1,7 @@
+<h2>Edit cable</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: cable_path(@conn, :update, @cable),
+                        ports: @ports %>
+
+<%= link "Back", to: cable_path(@conn, :index) %>

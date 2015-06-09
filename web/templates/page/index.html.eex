@@ -44,7 +44,25 @@
         <a href="/circuits">Circuits</a>
       </li>
       <li>
+        <a href="/pdus">PDUs</a>
+      </li>
+      <li>
+        <a href="/sockets">Sockets</a>
+      </li>
+      <li>
+        <a href="/power_supplies">Power Supplies</a>
+      </li>
+      <li>
+        <a href="/power_cords">Power Cords</a>
+      </li>
+      <li>
         <a href="/transits">Transits</a>
+      </li>
+      <li>
+        <a href="/ports">Ports</a>
+      </li>
+      <li>
+        <a href="/cables">Network Cables</a>
       </li>
     </ul>
   </div>

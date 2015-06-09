@@ -1,0 +1,22 @@
+<h2>Show cable</h2>
+
+<ul>
+
+  <li>
+    <strong>Serial:</strong>
+    <%= @cable.serial %>
+  </li>
+
+  <li>
+    <strong>Port A:</strong>
+    <%= @cable.port_a.name %>
+  </li>
+
+  <li>
+    <strong>Port B:</strong>
+    <%= @cable.port_b.name %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: cable_path(@conn, :index) %>

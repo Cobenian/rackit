@@ -1,0 +1,32 @@
+<h2>Listing ports</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pdu</th>
+      <th>Device</th>
+      <th>Transit</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for port <- @ports do %>
+    <tr>
+      <td><%= port.name %></td>
+      <td><%= port.pdu.name %></td>
+      <td><%= port.device.name %></td>
+      <td><%= port.transit.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: port_path(@conn, :show, port), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: port_path(@conn, :edit, port), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: port_path(@conn, :delete, port), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New port", to: port_path(@conn, :new) %>

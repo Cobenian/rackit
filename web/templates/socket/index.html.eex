@@ -1,0 +1,28 @@
+<h2>Listing sockets</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Pdu</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for socket <- @sockets do %>
+    <tr>
+      <td><%= socket.position %></td>
+      <td><%= socket.pdu.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: socket_path(@conn, :show, socket), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: socket_path(@conn, :edit, socket), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: socket_path(@conn, :delete, socket), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New socket", to: socket_path(@conn, :new) %>

@@ -29,6 +29,12 @@ defmodule Rackit.Router do
     resources "/devices", DeviceController
     resources "/circuits", CircuitController
     resources "/transits", TransitController
+    resources "/pdus", PduController
+    resources "/sockets", SocketController
+    resources "/power_supplies", PowerSupplyController
+    resources "/ports", PortController
+    resources "/power_cords", PowerCordController
+    resources "/cables", CableController
   end
 
   # Other scopes may use custom stacks.
