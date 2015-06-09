@@ -1,16 +1,15 @@
-defmodule Rackit.Slot do
+defmodule Rackit.Device do
   use Rackit.Web, :model
 
-  schema "slots" do
-    field :position, :integer
-    belongs_to :rack, Rackit.Rack
-    belongs_to :device, Rackit.Device
+  schema "devices" do
+    field :name, :string
+    belongs_to :device_type, Rackit.DeviceType
 
     timestamps
   end
 
-  @required_fields ~w(position rack_id)
-  @optional_fields ~w(device_id)
+  @required_fields ~w(name device_type_id)
+  @optional_fields ~w()
 
   @doc """
   Creates a changeset based on the `model` and `params`.

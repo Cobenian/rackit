@@ -1,0 +1,30 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Name</label>
+    <%= text_input f, :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>DeviceType</label>
+    <select id="device_device_type_id" name="device[device_type_id]" class="form-control">
+      <%= for device_type <- @device_types do %>
+      <option value="<%= device_type.id %>" <%= if f.model.device_type_id == device_type.id do %>selected="true"<% end %>><%= device_type.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

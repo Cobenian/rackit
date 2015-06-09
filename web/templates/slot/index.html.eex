@@ -5,6 +5,7 @@
     <tr>
       <th>Position</th>
       <th>Rack</th>
+      <th>Device</th>
 
       <th></th>
     </tr>
@@ -14,6 +15,11 @@
     <tr>
       <td><%= slot.position %></td>
       <td><%= slot.rack.name %></td>
+      <%= if slot.device do %>
+      <td><%= slot.device.name %></td>
+      <% else %>
+      <td></td>
+      <% end %>
 
       <td class="text-right">
         <%= link "Show", to: slot_path(@conn, :show, slot), class: "btn btn-default btn-xs" %>

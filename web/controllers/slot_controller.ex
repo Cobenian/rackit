@@ -8,7 +8,7 @@ defmodule Rackit.SlotController do
 
   def index(conn, _params) do
     slots = Repo.all(Slot) |> Enum.map(fn(slot) ->
-      slot |> Repo.preload(:rack)
+      slot |> Repo.preload(:rack) |> Repo.preload(:device)
     end)
     render(conn, "index.html", slots: slots)
   end
@@ -16,7 +16,8 @@ defmodule Rackit.SlotController do
   def new(conn, _params) do
     changeset = Slot.changeset(%Slot{})
     racks = Repo.all(Rackit.Rack)
-    render(conn, "new.html", changeset: changeset, racks: racks)
+    devices = Repo.all(Rackit.Device)
+    render(conn, "new.html", changeset: changeset, racks: racks, devices: devices)
   end
 
   def create(conn, %{"slot" => slot_params}) do
@@ -30,24 +31,26 @@ defmodule Rackit.SlotController do
       |> redirect(to: slot_path(conn, :index))
     else
       racks = Repo.all(Rackit.Rack)
-      render(conn, "new.html", changeset: changeset, racks: racks)
+      devices = Repo.all(Rackit.Device)
+      render(conn, "new.html", changeset: changeset, racks: racks, devices: devices)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    slot = Repo.get(Slot, id) |> Repo.preload(:rack)
+    slot = Repo.get(Slot, id) |> Repo.preload(:rack) |> Repo.preload(:device)
     render(conn, "show.html", slot: slot)
   end
 
   def edit(conn, %{"id" => id}) do
-    slot = Repo.get(Slot, id) |> Repo.preload(:rack)
+    slot = Repo.get(Slot, id) |> Repo.preload(:rack) |> Repo.preload(:device)
     changeset = Slot.changeset(slot)
     racks = Repo.all(Rackit.Rack)
-    render(conn, "edit.html", slot: slot, changeset: changeset, racks: racks)
+    devices = Repo.all(Rackit.Device)
+    render(conn, "edit.html", slot: slot, changeset: changeset, racks: racks, devices: devices)
   end
 
   def update(conn, %{"id" => id, "slot" => slot_params}) do
-    slot = Repo.get(Slot, id) |> Repo.preload(:rack)
+    slot = Repo.get(Slot, id) |> Repo.preload(:rack) |> Repo.preload(:device)
     changeset = Slot.changeset(slot, slot_params)
 
     if changeset.valid? do
@@ -58,7 +61,8 @@ defmodule Rackit.SlotController do
       |> redirect(to: slot_path(conn, :index))
     else
       racks = Repo.all(Rackit.Rack)
-      render(conn, "edit.html", slot: slot, changeset: changeset, racks: racks)
+      devices = Repo.all(Rackit.Device)
+      render(conn, "edit.html", slot: slot, changeset: changeset, racks: racks, devices: devices)
     end
   end
 

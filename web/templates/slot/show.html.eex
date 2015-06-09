@@ -12,6 +12,13 @@
     <%= @slot.rack.name %>
   </li>
 
+  <li>
+    <strong>Device:</strong>
+    <%= if @slot.device do %>
+    <%= @slot.device.name %>
+    <% end %>
+  </li>
+
 </ul>
 
 <%= link "Back", to: slot_path(@conn, :index) %>
