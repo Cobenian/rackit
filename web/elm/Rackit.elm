@@ -227,7 +227,6 @@ deviceList address deviceStatuses =
 --   in
 --       "devices" := Json.list device
 
-
 view : Address Action -> Model -> Html
 view address model =
   div [ id "container" ]
