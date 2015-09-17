@@ -1,7 +1,0 @@
-<h2>Edit floor</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: floor_path(@conn, :update, @floor),
-                        buildings: @buildings %>
-
-<%= link "Back", to: floor_path(@conn, :index) %>

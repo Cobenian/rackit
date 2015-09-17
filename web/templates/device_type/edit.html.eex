@@ -1,6 +1,0 @@
-<h2>Edit device_type</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: device_type_path(@conn, :update, @device_type) %>
-
-<%= link "Back", to: device_type_path(@conn, :index) %>

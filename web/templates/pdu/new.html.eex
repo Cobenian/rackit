@@ -1,7 +1,0 @@
-<h2>New pdu</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: pdu_path(@conn, :create),
-                        circuits: @circuits %>
-
-<%= link "Back", to: pdu_path(@conn, :index) %>

@@ -1,7 +1,0 @@
-<h2>New power_supply</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: power_supply_path(@conn, :create),
-                        devices: @devices %>
-
-<%= link "Back", to: power_supply_path(@conn, :index) %>

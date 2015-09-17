@@ -1,7 +1,0 @@
-<h2>New cable</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: cable_path(@conn, :create),
-                        ports: @ports %>
-
-<%= link "Back", to: cable_path(@conn, :index) %>

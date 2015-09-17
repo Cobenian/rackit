@@ -1,8 +1,0 @@
-<h2>Edit slot</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: slot_path(@conn, :update, @slot),
-                        racks: @racks,
-                        devices: @devices %>
-
-<%= link "Back", to: slot_path(@conn, :index) %>

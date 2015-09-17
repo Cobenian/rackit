@@ -1,9 +1,0 @@
-<h2>Edit port</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: port_path(@conn, :update, @port),
-                        pdus: @pdus,
-                        devices: @devices,
-                        transits: @transits %>
-
-<%= link "Back", to: port_path(@conn, :index) %>
