@@ -1,187 +1,87 @@
+<div class="jumbotron">
+  <h2>Welcome to RackIT!</h2>
+  <p class="lead">The easiest way to manage your Data Center inventory.</p>
+</div>
 
-<div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="<%= static_path(@conn, "/images/sidebar-14.jpg") %>" style="background-image: url('<%= static_path(@conn, "/images/sidebar-14.jpg") %>')">
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>Resources</h4>
+    <ul>
+      <li>
+        <a href="/data_centers">Data Centers</a>
+      </li>
+      <li>
+        <a href="/buildings">Buildings</a>
+      </li>
+      <li>
+        <a href="/floors">Floors</a>
+      </li>
+      <li>
+        <a href="/rooms">Rooms</a>
+      </li>
+      <li>
+        <a href="/cages">Cages</a>
+      </li>
+      <li>
+        <a href="/racks">Racks</a>
+      </li>
+      <li>
+        <a href="/slots">Slots</a>
+      </li>
+      <li>
+        <a href="/devices">Devices</a>
+      </li>
+      <li>
+        <a href="/device_types">Device Types</a>
+      </li>
+      <li>
+        <a href="/companies">Companies</a>
+      </li>
+      <li>
+        <a href="/pocs">Point of Contacts</a>
+      </li>
+      <li>
+        <a href="/circuits">Circuits</a>
+      </li>
+      <li>
+        <a href="/pdus">PDUs</a>
+      </li>
+      <li>
+        <a href="/sockets">Sockets</a>
+      </li>
+      <li>
+        <a href="/power_supplies">Power Supplies</a>
+      </li>
+      <li>
+        <a href="/power_cords">Power Cords</a>
+      </li>
+      <li>
+        <a href="/transits">Transits</a>
+      </li>
+      <li>
+        <a href="/ports">Ports</a>
+      </li>
+      <li>
+        <a href="/cables">Network Cables</a>
+      </li>
+    </ul>
+  </div>
 
-    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
-
-
-    	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="http://www.cobenian.com" class="simple-text">
-                    RackIT
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li>
-                    <a href="dashboard.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-								<li>
-                    <a href="table.html">
-                        <i class="pe-7s-home"></i>
-                        <p>Data Centers</p>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="user.html">
-                        <i class="pe-7s-server"></i>
-                        <p>Devices</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-disk"></i>
-                        <p>Drives</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-network"></i>
-                        <p>Network</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-battery"></i>
-                        <p>Power</p>
-                    </a>
-                </li>
-								<li>
-                    <a href="typography.html">
-                        <i class="pe-7s-more"></i>
-                        <p>More</p>
-                    </a>
-                </li>
-            </ul>
-    	</div>
-    </div>
-
-    <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Table List</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret"></b>
-                                    <span class="notification">5</span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                           <a href="">
-                               Account
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Dropdown
-                                    <b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Log out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Devices</h4>
-                                <p class="category">Across all data centers</p>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-																<div id="content"/>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; 2015 <a href="http://www.cobenian.com">RackIT</a>
-                </p>
-            </div>
-        </footer>
-
-
-    </div>
+  <div class="col-lg-6">
+    <h4>Help</h4>
+    <ul>
+      <li>
+        <a href="#">Erlang</a>
+      </li>
+      <li>
+        <a href="#">Elixir</a>
+      </li>
+      <li>
+        <a href="#">Phoenix</a>
+      </li>
+      <li>
+        <a href="#">Postgresql</a>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,0 +1,17 @@
+<h2>Show socket</h2>
+
+<ul>
+
+  <li>
+    <strong>Position:</strong>
+    <%= @socket.position %>
+  </li>
+
+  <li>
+    <strong>Pdu:</strong>
+    <%= @socket.pdu.name %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: socket_path(@conn, :index) %>

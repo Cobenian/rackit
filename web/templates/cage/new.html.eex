@@ -1,0 +1,7 @@
+<h2>New cage</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: cage_path(@conn, :create),
+                        rooms: @rooms %>
+
+<%= link "Back", to: cage_path(@conn, :index) %>

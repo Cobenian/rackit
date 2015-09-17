@@ -11,7 +11,7 @@ config :rackit, Rackit.Endpoint,
   debug_errors: true,
   code_reloader: true,
   cache_static_lookup: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch"]]
 
 # Watch static and templates for browser reloading.
 config :rackit, Rackit.Endpoint,
@@ -29,7 +29,7 @@ config :logger, :console, format: "[$level] $message\n"
 # Configure your database
 config :rackit, Rackit.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "rackit",
+  password: "I am a developer and I am here to help.",
   database: "rackit_dev",
   size: 10 # The amount of database connections in the pool

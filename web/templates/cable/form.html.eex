@@ -1,0 +1,39 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Serial</label>
+    <%= text_input f, :serial, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Port A</label>
+    <select id="cable_port_a_id" name="cable[port_a_id]" class="form-control">
+      <%= for port <- @ports do %>
+      <option value="<%= port.id %>" <%= if f.model.port_a_id == port.id do %>selected="true"<% end %>><%= port.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Port B</label>
+    <select id="cable_port_b_id" name="cable[port_b_id]" class="form-control">
+      <%= for port <- @ports do %>
+      <option value="<%= port.id %>" <%= if f.model.port_b_id == port.id do %>selected="true"<% end %>><%= port.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<h2>Show cage</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @cage.name %>
+  </li>
+
+  <li>
+    <strong>Room:</strong>
+    <%= @cage.room.name %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: cage_path(@conn, :index) %>

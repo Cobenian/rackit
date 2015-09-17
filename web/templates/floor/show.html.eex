@@ -1,0 +1,17 @@
+<h2>Show floor</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @floor.name %>
+  </li>
+
+  <li>
+    <strong>Building:</strong>
+    <%= @floor.building.name %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: floor_path(@conn, :index) %>

@@ -1,0 +1,42 @@
+<h2>Listing buildings</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>DataCenter</th>
+      <th>Street1</th>
+      <th>Street2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Country</th>
+      <th>Note</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for building <- @buildings do %>
+    <tr>
+      <td><%= building.name %></td>
+      <td><%= building.data_center.name %></td>
+      <td><%= building.street1 %></td>
+      <td><%= building.street2 %></td>
+      <td><%= building.city %></td>
+      <td><%= building.state %></td>
+      <td><%= building.zip %></td>
+      <td><%= building.country %></td>
+      <td><%= building.note %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: building_path(@conn, :show, building), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: building_path(@conn, :edit, building), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: building_path(@conn, :delete, building), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New building", to: building_path(@conn, :new) %>

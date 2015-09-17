@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :rackit, Rackit.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "rackit",
+  password: "I am a developer and I am here to help.",
   database: "rackit_test",
-  pool: Ecto.Adapters.SQL.Sandbox
+  size: 1 # Use a single connection for transactional tests

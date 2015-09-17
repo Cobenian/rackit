@@ -3,7 +3,7 @@ defmodule Rackit.DeviceTest do
 
   alias Rackit.Device
 
-  @valid_attrs %{data_center: "some content", device_type: "some content", drives_bad: 42, drives_empty: 42, drives_in_use: 42, name: "some content", ports_bad: 42, ports_empty: 42, ports_in_use: 42, power_bad: 42, power_empty: 42, power_in_use: 42}
+  @valid_attrs %{device_type: nil, name: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

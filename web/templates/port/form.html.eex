@@ -1,0 +1,48 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Name</label>
+    <%= text_input f, :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Pdu</label>
+    <select id="port_pdu_id" name="port[pdu_id]" class="form-control">
+      <%= for pdu <- @pdus do %>
+      <option value="<%= pdu.id %>" <%= if f.model.pdu_id == pdu.id do %>selected="true"<% end %>><%= pdu.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Device</label>
+    <select id="port_device_id" name="port[device_id]" class="form-control">
+      <%= for device <- @devices do %>
+      <option value="<%= device.id %>" <%= if f.model.device_id == device.id do %>selected="true"<% end %>><%= device.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Transit</label>
+    <select id="port_transit_id" name="port[transit_id]" class="form-control">
+      <%= for transit <- @transits do %>
+      <option value="<%= transit.id %>" <%= if f.model.transit_id == transit.id do %>selected="true"<% end %>><%= transit.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

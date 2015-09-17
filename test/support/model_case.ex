@@ -16,6 +16,7 @@ defmodule Rackit.ModelCase do
 
   using do
     quote do
+      # Alias the data repository and import query/model functions
       alias Rackit.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]

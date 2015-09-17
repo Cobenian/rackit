@@ -1,0 +1,17 @@
+<h2>Show transit</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @transit.name %>
+  </li>
+
+  <li>
+    <strong>Cage:</strong>
+    <%= @transit.cage.name %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: transit_path(@conn, :index) %>

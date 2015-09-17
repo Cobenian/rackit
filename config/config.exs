@@ -9,8 +9,8 @@ use Mix.Config
 config :rackit, Rackit.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "mFU9A4If+RvL+bIDPA07DmWi382vZygRMBfqDdmIv5nbVeOt1lpzyIl4BuT8WhVP",
-  render_errors: [default_format: "html"],
+  secret_key_base: "t0FthfDDR2v34yx80Pcbus5TjRKQMX+dhla5jALnp88Wm4ey41GgkVS0Nnzur8VY",
+  debug_errors: false,
   pubsub: [name: Rackit.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

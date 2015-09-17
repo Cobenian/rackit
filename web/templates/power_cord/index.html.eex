@@ -1,0 +1,30 @@
+<h2>Listing power_cords</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Serial</th>
+      <th>Socket</th>
+      <th>PowerSupply</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for power_cord <- @power_cords do %>
+    <tr>
+      <td><%= power_cord.serial %></td>
+      <td><%= power_cord.socket.position %></td>
+      <td><%= power_cord.power_supply.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: power_cord_path(@conn, :show, power_cord), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: power_cord_path(@conn, :edit, power_cord), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: power_cord_path(@conn, :delete, power_cord), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New power_cord", to: power_cord_path(@conn, :new) %>

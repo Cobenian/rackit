@@ -1,0 +1,7 @@
+<h2>Edit socket</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: socket_path(@conn, :update, @socket),
+                        pdus: @pdus %>
+
+<%= link "Back", to: socket_path(@conn, :index) %>
