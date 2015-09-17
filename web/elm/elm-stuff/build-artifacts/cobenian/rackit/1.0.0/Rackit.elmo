@@ -1,0 +1,331 @@
+Elm.Rackit = Elm.Rackit || {};
+Elm.Rackit.make = function (_elm) {
+   "use strict";
+   _elm.Rackit = _elm.Rackit || {};
+   if (_elm.Rackit.values)
+   return _elm.Rackit.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Rackit",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp = Elm.StartApp.make(_elm);
+   var errorClass = function (deviceStatus) {
+      return _U.cmp(deviceStatus.power.badCount,
+      0) > 0 || (_U.cmp(deviceStatus.drives.badCount,
+      0) > 0 || _U.cmp(deviceStatus.ports.badCount,
+      0) > 0) ? "warning" : "";
+   };
+   var category = function (deviceStatus) {
+      return function () {
+         var _v0 = deviceStatus.category;
+         switch (_v0.ctor)
+         {case "PDU": return "PDU";
+            case "Router": return "Router";
+            case "Server": return "Server";
+            case "Switch": return "Switch";}
+         _U.badCase($moduleName,
+         "between lines 143 and 154");
+      }();
+   };
+   var itemElement = F2(function (itemClass,
+   itemCount) {
+      return _U.cmp(itemCount,
+      0) > 0 ? A2($Html.span,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      "label ",
+      A2($Basics._op["++"],
+      itemClass,
+      " item-status")))]),
+      _L.fromArray([$Html.text($Basics.toString(itemCount))])) : $Html.text("");
+   });
+   var itemStatus = function (itemStatus) {
+      return function () {
+         var c = A2(itemElement,
+         "label-warning",
+         itemStatus.badCount);
+         var b = A2(itemElement,
+         "label-default",
+         itemStatus.emptyCount);
+         var a = A2(itemElement,
+         "label-success",
+         itemStatus.inUseCount);
+         return _L.fromArray([a,b,c]);
+      }();
+   };
+   var deviceStatusItem = F2(function (address,
+   deviceStatus) {
+      return A2($Html.tr,
+      _L.fromArray([$Html$Attributes.$class(errorClass(deviceStatus))]),
+      _L.fromArray([A2($Html.td,
+                   _L.fromArray([$Html$Attributes.$class("name")]),
+                   _L.fromArray([$Html.text(deviceStatus.name)]))
+                   ,A2($Html.td,
+                   _L.fromArray([$Html$Attributes.$class("category")]),
+                   _L.fromArray([$Html.text(category(deviceStatus))]))
+                   ,A2($Html.td,
+                   _L.fromArray([$Html$Attributes.$class("data-center")]),
+                   _L.fromArray([$Html.text(deviceStatus.dataCenter)]))
+                   ,A2($Html.td,
+                   _L.fromArray([$Html$Attributes.$class("power")]),
+                   itemStatus(deviceStatus.power))
+                   ,A2($Html.td,
+                   _L.fromArray([$Html$Attributes.$class("drives")]),
+                   itemStatus(deviceStatus.drives))
+                   ,A2($Html.td,
+                   _L.fromArray([$Html$Attributes.$class("ports")]),
+                   itemStatus(deviceStatus.ports))]));
+   });
+   var deviceList = F2(function (address,
+   deviceStatuses) {
+      return function () {
+         var items = A2($List.map,
+         deviceStatusItem(address),
+         deviceStatuses);
+         return A2($Html.table,
+         _L.fromArray([$Html$Attributes.$class("table table-striped table-hover")]),
+         _L.fromArray([A2($Html.thead,
+                      _L.fromArray([]),
+                      _L.fromArray([A2($Html.tr,
+                      _L.fromArray([]),
+                      _L.fromArray([A2($Html.th,
+                                   _L.fromArray([]),
+                                   _L.fromArray([$Html.text("Name")]))
+                                   ,A2($Html.th,
+                                   _L.fromArray([]),
+                                   _L.fromArray([$Html.text("Type")]))
+                                   ,A2($Html.th,
+                                   _L.fromArray([]),
+                                   _L.fromArray([$Html.text("Data Center")]))
+                                   ,A2($Html.th,
+                                   _L.fromArray([]),
+                                   _L.fromArray([$Html.text("Power")]))
+                                   ,A2($Html.th,
+                                   _L.fromArray([]),
+                                   _L.fromArray([$Html.text("Drives")]))
+                                   ,A2($Html.th,
+                                   _L.fromArray([]),
+                                   _L.fromArray([$Html.text("Ports")]))]))]))
+                      ,A2($Html.tbody,
+                      _L.fromArray([]),
+                      items)]));
+      }();
+   });
+   var view = F2(function (address,
+   model) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.id("container")]),
+      _L.fromArray([A2(deviceList,
+      address,
+      model.deviceStatuses)]));
+   });
+   var update = F2(function (action,
+   model) {
+      return function () {
+         switch (action.ctor)
+         {case "NoOp": return model;}
+         _U.badCase($moduleName,
+         "between lines 120 and 122");
+      }();
+   });
+   var NoOp = {ctor: "NoOp"};
+   var ItemStatus = F3(function (a,
+   b,
+   c) {
+      return {_: {}
+             ,badCount: c
+             ,emptyCount: b
+             ,inUseCount: a};
+   });
+   var DeviceStatus = F6(function (a,
+   b,
+   c,
+   d,
+   e,
+   f) {
+      return {_: {}
+             ,category: f
+             ,dataCenter: e
+             ,drives: c
+             ,name: a
+             ,ports: d
+             ,power: b};
+   });
+   var Model = function (a) {
+      return {_: {}
+             ,deviceStatuses: a};
+   };
+   var PDU = {ctor: "PDU"};
+   var Switch = {ctor: "Switch"};
+   var Router = {ctor: "Router"};
+   var Server = {ctor: "Server"};
+   var initialModel = {_: {}
+                      ,deviceStatuses: _L.fromArray([{_: {}
+                                                     ,category: Switch
+                                                     ,dataCenter: "NYC"
+                                                     ,drives: {_: {}
+                                                              ,badCount: 1
+                                                              ,emptyCount: 0
+                                                              ,inUseCount: 4}
+                                                     ,name: "switch-1"
+                                                     ,ports: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 48}
+                                                     ,power: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}}
+                                                    ,{_: {}
+                                                     ,category: Switch
+                                                     ,dataCenter: "NYC"
+                                                     ,drives: {_: {}
+                                                              ,badCount: 0
+                                                              ,emptyCount: 2
+                                                              ,inUseCount: 4}
+                                                     ,name: "switch-2"
+                                                     ,ports: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 0
+                                                             ,inUseCount: 50}
+                                                     ,power: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}}
+                                                    ,{_: {}
+                                                     ,category: Switch
+                                                     ,dataCenter: "NYC"
+                                                     ,drives: {_: {}
+                                                              ,badCount: 0
+                                                              ,emptyCount: 2
+                                                              ,inUseCount: 4}
+                                                     ,name: "switch-3"
+                                                     ,ports: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 24
+                                                             ,inUseCount: 24}
+                                                     ,power: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}}
+                                                    ,{_: {}
+                                                     ,category: Server
+                                                     ,dataCenter: "NYC"
+                                                     ,drives: {_: {}
+                                                              ,badCount: 0
+                                                              ,emptyCount: 2
+                                                              ,inUseCount: 4}
+                                                     ,name: "db-server-prod"
+                                                     ,ports: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 8
+                                                             ,inUseCount: 4}
+                                                     ,power: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}}
+                                                    ,{_: {}
+                                                     ,category: Server
+                                                     ,dataCenter: "SF"
+                                                     ,drives: {_: {}
+                                                              ,badCount: 0
+                                                              ,emptyCount: 2
+                                                              ,inUseCount: 0}
+                                                     ,name: "db2-server-prod"
+                                                     ,ports: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}
+                                                     ,power: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}}
+                                                    ,{_: {}
+                                                     ,category: Server
+                                                     ,dataCenter: "SF"
+                                                     ,drives: {_: {}
+                                                              ,badCount: 0
+                                                              ,emptyCount: 2
+                                                              ,inUseCount: 4}
+                                                     ,name: "db3-server-prod"
+                                                     ,ports: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}
+                                                     ,power: {_: {}
+                                                             ,badCount: 0
+                                                             ,emptyCount: 2
+                                                             ,inUseCount: 4}}])};
+   var main = $StartApp.start({_: {}
+                              ,model: initialModel
+                              ,update: update
+                              ,view: view});
+   var DeviceJson = function (a) {
+      return function (b) {
+         return function (c) {
+            return function (d) {
+               return function (e) {
+                  return function (f) {
+                     return function (g) {
+                        return function (h) {
+                           return function (i) {
+                              return function (j) {
+                                 return function (k) {
+                                    return function (l) {
+                                       return function (m) {
+                                          return {_: {}
+                                                 ,data_center: d
+                                                 ,device_type: c
+                                                 ,drives_bad: j
+                                                 ,drives_empty: i
+                                                 ,drives_in_use: h
+                                                 ,id: a
+                                                 ,name: b
+                                                 ,ports_bad: m
+                                                 ,ports_empty: l
+                                                 ,ports_in_use: k
+                                                 ,power_bad: g
+                                                 ,power_empty: f
+                                                 ,power_in_use: e};
+                                       };
+                                    };
+                                 };
+                              };
+                           };
+                        };
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+   _elm.Rackit.values = {_op: _op
+                        ,DeviceJson: DeviceJson
+                        ,Server: Server
+                        ,Router: Router
+                        ,Switch: Switch
+                        ,PDU: PDU
+                        ,Model: Model
+                        ,DeviceStatus: DeviceStatus
+                        ,ItemStatus: ItemStatus
+                        ,initialModel: initialModel
+                        ,NoOp: NoOp
+                        ,update: update
+                        ,itemElement: itemElement
+                        ,itemStatus: itemStatus
+                        ,category: category
+                        ,errorClass: errorClass
+                        ,deviceStatusItem: deviceStatusItem
+                        ,deviceList: deviceList
+                        ,view: view
+                        ,main: main};
+   return _elm.Rackit.values;
+};
