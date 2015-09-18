@@ -17,6 +17,13 @@ defmodule Rackit.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/login", PageController, :login
+    post "/login", PageController, :authn
+    get "/register", PageController, :register
+
+    scope "/rackit" do
+      get "/dashboard", PageController, :dashboard
+    end
   end
 
   # Other scopes may use custom stacks.
