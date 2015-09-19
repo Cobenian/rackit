@@ -1,0 +1,6 @@
+<div class="col-lg-3 col-md-6">
+  <%= render "status_card.html",  card_color: @card_color,
+                                  card_icon: @card_icon,
+                                  card_count: @card_count,
+                                  card_description: @card_description %>
+</div>

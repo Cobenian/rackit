@@ -3,11 +3,37 @@
     <%= render "nav_bar.html", conn: @conn %>
 
     <div id="page-wrapper">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Servers</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
+      <%= render "page_header.html", page_header: "Servers" %>
+      <div class="row">
+          <%= render "standard_card.html",card_color: "panel-primary",
+                                          card_icon: "fa-cloud-download",
+                                          card_count: 26,
+                                          card_description: "Switches" %>
+          <%= render "standard_card.html",card_color: "panel-green",
+                                          card_icon: "fa-cloud-upload",
+                                          card_count: 26,
+                                          card_description: "Routers" %>
+          <%= render "standard_card.html",card_color: "panel-yellow",
+                                          card_icon: "fa-database",
+                                          card_count: 128,
+                                          card_description: "Databases" %>
+          <%= render "standard_card.html",card_color: "panel-primary",
+                                          card_icon: "fa-desktop",
+                                          card_count: 26,
+                                          card_description: "Application Servers" %>
+          <%= render "standard_card.html",card_color: "panel-green",
+                                          card_icon: "fa-cubes",
+                                          card_count: 26,
+                                          card_description: "DNS" %>
+          <%= render "standard_card.html",card_color: "panel-yellow",
+                                          card_icon: "fa-hdd-o",
+                                          card_count: 26,
+                                          card_description: "Storage" %>
+          <%= render "standard_card.html",card_color: "panel-primary",
+                                          card_icon: "fa-home",
+                                          card_count: 26,
+                                          card_description: "Infrastructure" %>
+
+      </div>
     </div>
 </div>

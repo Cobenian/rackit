@@ -1,0 +1,21 @@
+<div id="wrapper">
+
+    <%= render "nav_bar.html", conn: @conn %>
+
+    <div id="page-wrapper">
+      <%= render "page_header.html", page_header: "Racks" %>
+      <div class="row">
+          <%= render "standard_card.html",card_color: "panel-green",
+                                          card_icon: "fa-cloud-download",
+                                          card_count: 26,
+                                          card_description: "Network" %>
+          <%= render "standard_card.html",card_color: "panel-primary",
+                                          card_icon: "fa-power-off",
+                                          card_count: 26,
+                                          card_description: "Power" %>
+          <%= render "standard_card.html",card_color: "panel-primary",
+                                          card_icon: "fa-desktop",
+                                          card_count: 26,
+                                          card_description: "Servers" %>
+    </div>
+</div>

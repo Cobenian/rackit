@@ -33,6 +33,10 @@ defmodule Rackit.PageController do
     render conn, "data_centers.html"
   end
 
+  def racks(conn, _params) do
+    render conn, "racks.html"
+  end
+
   def servers(conn, _params) do
     render conn, "servers.html"
   end
@@ -47,6 +51,10 @@ defmodule Rackit.PageController do
 
   def powers(conn, _params) do
     render conn, "powers.html"
+  end
+
+  def reports(conn, _params) do
+    render conn, "reports.html"
   end
 
 end

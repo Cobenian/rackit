@@ -15,7 +15,10 @@
                 <a href="<%= page_path(@conn, :dashboard) %>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="<%= page_path(@conn, :data_centers) %>"><i class="fa fa-building-o fa-fw"></i> Data Center</a>
+                <a href="<%= page_path(@conn, :data_centers) %>"><i class="fa fa-building-o fa-fw"></i> Data Centers</a>
+            </li>
+            <li>
+                <a href="<%= page_path(@conn, :racks) %>"><i class="fa fa-navicon fa-fw"></i> Racks</a>
             </li>
             <li>
                 <a href="<%= page_path(@conn, :servers) %>"><i class="fa fa-desktop fa-fw"></i> Servers</a>
@@ -28,6 +31,9 @@
             </li>
             <li>
                 <a href="<%= page_path(@conn, :drives) %>"><i class="fa fa-hdd-o fa-fw"></i> Drives</a>
+            </li>
+            <li>
+                <a href="<%= page_path(@conn, :reports) %>"><i class="fa fa-table fa-fw"></i> Reports</a>
             </li>
         </ul>
     </div>

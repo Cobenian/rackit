@@ -3,15 +3,15 @@
     <%= render "nav_bar.html", conn: @conn %>
 
     <div id="page-wrapper">
-      <%= render "page_header.html", page_header: "Drives" %>
+      <%= render "page_header.html", page_header: "Reports" %>
       <div class="row">
           <%= render "standard_card.html",card_color: "panel-green",
-                                          card_icon: "fa-hdd-o",
+                                          card_icon: "fa-table",
                                           card_count: 26,
-                                          card_description: "SANs" %>
+                                          card_description: "Report 1" %>
           <%= render "standard_card.html",card_color: "panel-primary",
-                                          card_icon: "fa-floppy-o",
+                                          card_icon: "fa-table",
                                           card_count: 26,
-                                          card_description: "Hard Drives" %>
+                                          card_description: "Report 2" %>
     </div>
 </div>
