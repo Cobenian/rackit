@@ -29,4 +29,24 @@ defmodule Rackit.PageController do
     render conn, "dashboard.html"
   end
 
+  def data_centers(conn, _params) do
+    render conn, "data_centers.html"
+  end
+
+  def servers(conn, _params) do
+    render conn, "servers.html"
+  end
+
+  def drives(conn, _params) do
+    render conn, "drives.html"
+  end
+
+  def networks(conn, _params) do
+    render conn, "networks.html"
+  end
+
+  def powers(conn, _params) do
+    render conn, "powers.html"
+  end
+
 end

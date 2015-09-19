@@ -23,6 +23,12 @@ defmodule Rackit.Router do
 
     scope "/rackit" do
       get "/dashboard", PageController, :dashboard
+      get "/data_centers", PageController, :data_centers
+      get "/servers", PageController, :servers
+      get "/drives", PageController, :drives
+      get "/powers", PageController, :powers
+      get "/networks", PageController, :networks
+
     end
   end
 
