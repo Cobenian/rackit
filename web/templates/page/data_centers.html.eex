@@ -8,11 +8,13 @@
             <%= render "standard_card.html",card_color: "panel-primary",
                                             card_icon: "fa-building-o",
                                             card_count: 26,
-                                            card_description: "ASH" %>
+                                            card_description: "ASH",
+                                            card_link: page_path(@conn, :data_centers) %>
             <%= render "standard_card.html",card_color: "panel-green",
                                             card_icon: "fa-building-o",
                                             card_count: 128,
-                                            card_description: "CHA" %>
+                                            card_description: "CHA",
+                                            card_link: page_path(@conn, :data_centers) %>
         </div>
     </div>
 </div>

@@ -8,19 +8,23 @@
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-power-off",
                                           card_count: 26,
-                                          card_description: "Circuits" %>
+                                          card_description: "Circuits",
+                                          card_link: page_path(@conn, :powers) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-power-off",
                                           card_count: 26,
-                                          card_description: "PDUs" %>
+                                          card_description: "PDUs",
+                                          card_link: page_path(@conn, :powers) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-power-off",
                                           card_count: 26,
-                                          card_description: "UPS" %>
+                                          card_description: "UPS",
+                                          card_link: page_path(@conn, :powers) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-power-off",
                                           card_count: 26,
-                                          card_description: "Power Supplies" %>
+                                          card_description: "Power Supplies",
+                                          card_link: page_path(@conn, :powers) %>
       </div>
     </div>
 </div>

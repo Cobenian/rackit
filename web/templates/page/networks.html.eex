@@ -8,19 +8,23 @@
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-cloud-download",
                                           card_count: 26,
-                                          card_description: "Transits" %>
+                                          card_description: "Transits",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-cloud",
                                           card_count: 26,
-                                          card_description: "Routers" %>
+                                          card_description: "Routers",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-cloud",
                                           card_count: 26,
-                                          card_description: "Switches" %>
+                                          card_description: "Switches",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-filter",
                                           card_count: 26,
-                                          card_description: "Firewalls" %>
+                                          card_description: "Firewalls",
+                                          card_link: page_path(@conn, :networks) %>
       </div>
     </div>
 </div>

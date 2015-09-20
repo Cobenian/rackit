@@ -8,10 +8,12 @@
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-table",
                                           card_count: 26,
-                                          card_description: "Orphaned Objects" %>
+                                          card_description: "Orphaned Objects",
+                                          card_link: page_path(@conn, :reports) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-table",
                                           card_count: 26,
-                                          card_description: "Bad Hardware" %>
+                                          card_description: "Bad Hardware",
+                                          card_link: page_path(@conn, :reports) %>
     </div>
 </div>

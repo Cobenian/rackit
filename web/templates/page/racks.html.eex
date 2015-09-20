@@ -8,14 +8,17 @@
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-cloud-download",
                                           card_count: 26,
-                                          card_description: "Network" %>
+                                          card_description: "Network",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-power-off",
                                           card_count: 26,
-                                          card_description: "Power" %>
+                                          card_description: "Power",
+                                          card_link: page_path(@conn, :powers) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-desktop",
                                           card_count: 26,
-                                          card_description: "Servers" %>
+                                          card_description: "Servers",
+                                          card_link: page_path(@conn, :servers) %>
     </div>
 </div>

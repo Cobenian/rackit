@@ -8,31 +8,38 @@
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-cloud-download",
                                           card_count: 26,
-                                          card_description: "Switches" %>
+                                          card_description: "Switches",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-cloud-upload",
                                           card_count: 26,
-                                          card_description: "Routers" %>
+                                          card_description: "Routers",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-yellow",
                                           card_icon: "fa-database",
                                           card_count: 128,
-                                          card_description: "Databases" %>
+                                          card_description: "Databases",
+                                          card_link: page_path(@conn, :servers) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-desktop",
                                           card_count: 26,
-                                          card_description: "Application Servers" %>
+                                          card_description: "Application Servers",
+                                          card_link: page_path(@conn, :servers) %>
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-cubes",
                                           card_count: 26,
-                                          card_description: "DNS" %>
+                                          card_description: "DNS",
+                                          card_link: page_path(@conn, :networks) %>
           <%= render "standard_card.html",card_color: "panel-yellow",
                                           card_icon: "fa-hdd-o",
                                           card_count: 26,
-                                          card_description: "Storage" %>
+                                          card_description: "Storage",
+                                          card_link: page_path(@conn, :drives) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-home",
                                           card_count: 26,
-                                          card_description: "Infrastructure" %>
+                                          card_description: "Infrastructure",
+                                          card_link: page_path(@conn, :servers) %>
 
       </div>
     </div>

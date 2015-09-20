@@ -6,21 +6,42 @@
         <%= render "page_header.html", page_header: "Dashboard" %>
         <div class="row">
             <%= render "standard_card.html",card_color: "panel-primary",
+                                            card_icon: "fa-building-o",
+                                            card_count: 26,
+                                            card_description: "Data Centers",
+                                            card_link: page_path(@conn, :data_centers) %>
+            <%= render "standard_card.html",card_color: "panel-primary",
+                                            card_icon: "fa-navicon",
+                                            card_count: 26,
+                                            card_description: "Racks",
+                                            card_link: page_path(@conn, :racks) %>
+            <%= render "standard_card.html",card_color: "panel-primary",
                                             card_icon: "fa-desktop",
                                             card_count: 26,
-                                            card_description: "Servers" %>
+                                            card_description: "Servers",
+                                            card_link: page_path(@conn, :servers) %>
+            <%= render "standard_card.html",card_color: "panel-green",
+                                            card_icon: "fa-table",
+                                            card_count: 26,
+                                            card_description: "Reports",
+                                            card_link: page_path(@conn, :reports) %>
+        </div>
+        <div class="row">
             <%= render "standard_card.html",card_color: "panel-yellow",
                                             card_icon: "fa-power-off",
                                             card_count: 12,
-                                            card_description: "Power" %>
-            <%= render "standard_card.html",card_color: "panel-green",
+                                            card_description: "Power",
+                                            card_link: page_path(@conn, :powers) %>
+            <%= render "standard_card.html",card_color: "panel-yellow",
                                             card_icon: "fa-cloud-download",
                                             card_count: 124,
-                                            card_description: "Network" %>
-            <%= render "standard_card.html",card_color: "panel-red",
+                                            card_description: "Network",
+                                            card_link: page_path(@conn, :networks) %>
+            <%= render "standard_card.html",card_color: "panel-yellow",
                                             card_icon: "fa-hdd-o",
                                             card_count: 13,
-                                            card_description: "Drives" %>
+                                            card_description: "Drives",
+                                            card_link: page_path(@conn, :drives) %>
         </div>
         <div class="row">
           <div class="col-lg-12">
