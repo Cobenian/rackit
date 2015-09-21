@@ -3,19 +3,55 @@
     <%= render "nav_bar.html", conn: @conn %>
 
     <div id="page-wrapper">
+
+      <div class="row">
+          <%= render "small_card.html",card_color: "panel-default",
+                                          card_icon: "fa-building-o",
+                                          card_count: 153,
+                                          card_description: "ASH",
+                                          card_link: page_path(@conn, :data_centers) %>
+          <%= render "small_card.html",card_color: "panel-primary",
+                                          card_icon: "fa-building-o",
+                                          card_count: 128,
+                                          card_description: "CHA",
+                                          card_link: page_path(@conn, :data_centers) %>
+          <%= render "small_card.html",card_color: "panel-default",
+                                          card_icon: "fa-building-o",
+                                          card_count: 16,
+                                          card_description: "CRB",
+                                          card_link: page_path(@conn, :data_centers) %>
+          <%= render "small_card.html",card_color: "panel-default",
+                                          card_icon: "fa-building-o",
+                                          card_count: 29,
+                                          card_description: "CAN",
+                                          card_link: page_path(@conn, :data_centers) %>
+          <%= render "small_card.html",card_color: "panel-default",
+                                          card_icon: "fa-building-o",
+                                          card_count: 41,
+                                          card_description: "SEA",
+                                          card_link: page_path(@conn, :data_centers) %>
+          <%= render "small_card.html",card_color: "panel-default",
+                                          card_icon: "fa-building-o",
+                                          card_count: 12,
+                                          card_description: "SJC",
+                                          card_link: page_path(@conn, :data_centers) %>
+      </div>
+
+
       <%= render "page_header.html", page_header: "Racks" %>
+
       <div class="row">
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-cloud-download",
                                           card_count: 26,
                                           card_description: "Network",
                                           card_link: page_path(@conn, :networks) %>
-          <%= render "standard_card.html",card_color: "panel-primary",
+          <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-power-off",
                                           card_count: 26,
                                           card_description: "Power",
                                           card_link: page_path(@conn, :powers) %>
-          <%= render "standard_card.html",card_color: "panel-primary",
+          <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-desktop",
                                           card_count: 26,
                                           card_description: "Devices",
