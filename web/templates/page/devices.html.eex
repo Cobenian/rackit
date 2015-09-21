@@ -19,12 +19,12 @@
                                           card_icon: "fa-database",
                                           card_count: 128,
                                           card_description: "Databases",
-                                          card_link: page_path(@conn, :servers) %>
+                                          card_link: page_path(@conn, :devices) %>
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-desktop",
                                           card_count: 26,
                                           card_description: "Application Servers",
-                                          card_link: page_path(@conn, :servers) %>
+                                          card_link: page_path(@conn, :devices) %>
           <%= render "standard_card.html",card_color: "panel-green",
                                           card_icon: "fa-cubes",
                                           card_count: 26,
@@ -39,7 +39,7 @@
                                           card_icon: "fa-home",
                                           card_count: 26,
                                           card_description: "Infrastructure",
-                                          card_link: page_path(@conn, :servers) %>
+                                          card_link: page_path(@conn, :devices) %>
 
       </div>
     </div>
