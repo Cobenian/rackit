@@ -5,7 +5,7 @@
     <div id="page-wrapper">
         <%= render "page_header.html", page_header: "Data Centers" %>
         <div class="row">
-            <%= render "standard_card.html",card_color: "panel-primary",
+            <%= render "standard_card.html",card_color: "panel-default",
                                             card_icon: "fa-building-o",
                                             card_count: 153,
                                             card_description: "ASH",
@@ -15,29 +15,29 @@
                                             card_count: 128,
                                             card_description: "CHA",
                                             card_link: page_path(@conn, :data_centers) %>
-            <%= render "standard_card.html",card_color: "panel-yellow",
+            <%= render "standard_card.html",card_color: "panel-default",
                                             card_icon: "fa-building-o",
                                             card_count: 16,
                                             card_description: "CRB",
                                             card_link: page_path(@conn, :data_centers) %>
-            <%= render "standard_card.html",card_color: "panel-yellow",
+            <%= render "standard_card.html",card_color: "panel-default",
                                             card_icon: "fa-building-o",
                                             card_count: 29,
                                             card_description: "CAN",
                                             card_link: page_path(@conn, :data_centers) %>
         </div>
         <div class="row">
-            <%= render "standard_card.html",card_color: "panel-green",
+            <%= render "standard_card.html",card_color: "panel-default",
                                             card_icon: "fa-building-o",
                                             card_count: 41,
                                             card_description: "SEA",
                                             card_link: page_path(@conn, :data_centers) %>
-            <%= render "standard_card.html",card_color: "panel-green",
+            <%= render "standard_card.html",card_color: "panel-default",
                                             card_icon: "fa-building-o",
                                             card_count: 12,
                                             card_description: "SJC",
                                             card_link: page_path(@conn, :data_centers) %>
-            <%= render "standard_card.html",card_color: "panel-green",
+            <%= render "standard_card.html",card_color: "panel-default",
                                             card_icon: "fa-building-o",
                                             card_count: 98,
                                             card_description: "PHO",
@@ -77,7 +77,7 @@
           <div class="col-lg-12">
               <div class="panel panel-default">
                   <div class="panel-heading">
-                      Data Centers
+                      Data Centers - CHA
                   </div>
                   <div class="panel-body">
                       <div class="table-responsive">

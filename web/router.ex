@@ -25,7 +25,7 @@ defmodule Rackit.Router do
       get "/dashboard", PageController, :dashboard
       get "/data_centers", PageController, :data_centers
       get "/racks", PageController, :racks
-      get "/servers", PageController, :servers
+      get "/devices", PageController, :devices
       get "/drives", PageController, :drives
       get "/powers", PageController, :powers
       get "/networks", PageController, :networks

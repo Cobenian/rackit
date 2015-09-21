@@ -21,7 +21,7 @@
                 <a href="<%= page_path(@conn, :racks) %>"><i class="fa fa-navicon fa-fw"></i> Racks</a>
             </li>
             <li>
-                <a href="<%= page_path(@conn, :servers) %>"><i class="fa fa-desktop fa-fw"></i> Servers</a>
+                <a href="<%= page_path(@conn, :devices) %>"><i class="fa fa-desktop fa-fw"></i> Devices</a>
             </li>
             <li>
                 <a href="<%= page_path(@conn, :powers) %>"><i class="fa fa-power-off fa-fw"></i> Power</a>

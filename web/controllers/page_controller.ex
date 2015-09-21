@@ -37,8 +37,8 @@ defmodule Rackit.PageController do
     render conn, "racks.html"
   end
 
-  def servers(conn, _params) do
-    render conn, "servers.html"
+  def devices(conn, _params) do
+    render conn, "devices.html"
   end
 
   def drives(conn, _params) do

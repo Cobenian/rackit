@@ -3,7 +3,7 @@
     <%= render "nav_bar.html", conn: @conn %>
 
     <div id="page-wrapper">
-      <%= render "page_header.html", page_header: "Servers" %>
+      <%= render "page_header.html", page_header: "Devices" %>
       <div class="row">
           <%= render "standard_card.html",card_color: "panel-primary",
                                           card_icon: "fa-cloud-download",
