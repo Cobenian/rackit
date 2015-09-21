@@ -7,14 +7,70 @@
         <div class="row">
             <%= render "standard_card.html",card_color: "panel-primary",
                                             card_icon: "fa-building-o",
-                                            card_count: 26,
+                                            card_count: 153,
                                             card_description: "ASH",
                                             card_link: page_path(@conn, :data_centers) %>
-            <%= render "standard_card.html",card_color: "panel-green",
+            <%= render "standard_card.html",card_color: "panel-primary",
                                             card_icon: "fa-building-o",
                                             card_count: 128,
                                             card_description: "CHA",
                                             card_link: page_path(@conn, :data_centers) %>
+            <%= render "standard_card.html",card_color: "panel-yellow",
+                                            card_icon: "fa-building-o",
+                                            card_count: 16,
+                                            card_description: "CRB",
+                                            card_link: page_path(@conn, :data_centers) %>
+            <%= render "standard_card.html",card_color: "panel-yellow",
+                                            card_icon: "fa-building-o",
+                                            card_count: 29,
+                                            card_description: "CAN",
+                                            card_link: page_path(@conn, :data_centers) %>
+        </div>
+        <div class="row">
+            <%= render "standard_card.html",card_color: "panel-green",
+                                            card_icon: "fa-building-o",
+                                            card_count: 41,
+                                            card_description: "SEA",
+                                            card_link: page_path(@conn, :data_centers) %>
+            <%= render "standard_card.html",card_color: "panel-green",
+                                            card_icon: "fa-building-o",
+                                            card_count: 12,
+                                            card_description: "SJC",
+                                            card_link: page_path(@conn, :data_centers) %>
+            <%= render "standard_card.html",card_color: "panel-green",
+                                            card_icon: "fa-building-o",
+                                            card_count: 98,
+                                            card_description: "PHO",
+                                            card_link: page_path(@conn, :data_centers) %>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapseOne" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      New Data Center
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Data Center Name</label>
+                            <input class="form-control" placeholder="Enter text">
+                        </div>
+                        <button type="button" class="btn btn-default btn-circle btn-lg">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 </div>
