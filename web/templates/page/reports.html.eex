@@ -15,5 +15,10 @@
                                           card_count: 26,
                                           card_description: "Bad Hardware",
                                           card_link: page_path(@conn, :reports) %>
+          <%= render "standard_card.html",card_color: "panel-yellow",
+                                          card_icon: "fa-table",
+                                          card_count: 26,
+                                          card_description: "Expiring Warranties",
+                                          card_link: page_path(@conn, :reports) %>
     </div>
 </div>
